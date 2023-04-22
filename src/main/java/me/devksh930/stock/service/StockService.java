@@ -14,8 +14,8 @@ public class StockService {
         this.stockRepository = stockRepository;
     }
 
-    @Transactional
-    public void decrease(final Long id, final Long quantity) {
+    //    @Transactional
+    public synchronized void decrease(final Long id, final Long quantity) {
         final Stock stock = stockRepository.findById(id).orElseThrow();
 
         stock.decrease(quantity);
