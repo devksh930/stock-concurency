@@ -1,4 +1,4 @@
-package me.devksh930.sock;
+package me.devksh930.stock;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;

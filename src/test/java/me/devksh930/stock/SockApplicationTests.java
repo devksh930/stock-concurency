@@ -1,4 +1,4 @@
-package me.devksh930.sock;
+package me.devksh930.stock;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;
