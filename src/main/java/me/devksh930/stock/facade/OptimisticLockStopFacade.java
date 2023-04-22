@@ -2,10 +2,8 @@ package me.devksh930.stock.facade;
 
 import me.devksh930.stock.service.StockService;
 import me.devksh930.stock.service.impl.OptimisticLockStockService;
-import org.springframework.context.annotation.Primary;
 import org.springframework.stereotype.Service;
 
-@Primary
 @Service
 public class OptimisticLockStopFacade implements StockService {
 
