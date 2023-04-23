@@ -12,8 +12,8 @@ public class Stock {
 
     private Long quantity;
 
-    @Version
-    private Long version;
+//    @Version
+//    private Long version;
 
     protected Stock() {
     }
