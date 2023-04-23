@@ -2,6 +2,7 @@ package me.devksh930.stock.service;
 
 import me.devksh930.stock.domain.Stock;
 import me.devksh930.stock.facade.LettuceLockStockFacade;
+import me.devksh930.stock.facade.RedissonLockStockFacade;
 import me.devksh930.stock.repository.StockRepository;
 import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeEach;
@@ -20,7 +21,7 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
 class StockServiceTest {
 
     @Autowired
-    private LettuceLockStockFacade stockService;
+    private RedissonLockStockFacade stockService;
 
 
     @Autowired
@@ -58,8 +59,6 @@ class StockServiceTest {
             executorService.submit(() -> {
                 try {
                     stockService.decrease(1L, 1L);
-                } catch (InterruptedException e) {
-                    throw new RuntimeException(e);
                 } finally {
                     countDownLatch.countDown();
                 }
