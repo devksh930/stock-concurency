@@ -1,7 +1,11 @@
 package me.devksh930.stock.service;
 
 import me.devksh930.stock.domain.Stock;
+import me.devksh930.stock.facade.NameLockStockFacade;
+import me.devksh930.stock.facade.OptimisticLockStopFacade;
 import me.devksh930.stock.repository.StockRepository;
+import me.devksh930.stock.service.impl.DefaultStockService;
+import me.devksh930.stock.service.impl.OptimisticLockStockService;
 import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.DisplayName;
@@ -19,7 +23,10 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
 class StockServiceTest {
 
     @Autowired
-    private StockService stockService;
+    private NameLockStockFacade stockService;
+
+    @Autowired
+    private DefaultStockService service;
 
     @Autowired
     private StockRepository stockRepository;
